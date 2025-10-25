@@ -1,6 +1,7 @@
 # IR3 Assets: alloy smelting
 
 Reskins [Alloy Smelting](https://mods.factorio.com/mod/alloy-smelting) using IR3 graphical assets, if installed.  
+*Breaking change: Modifies the fluid connections of the electric kiln.*
 
 *Requires the manual installation of the Industrial Revolution 3 Asset Packs.*
 
