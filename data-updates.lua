@@ -34,5 +34,29 @@ require("prototypes/item/coke")
 recipe = data.raw["recipe"]["coke"]
 if mods["quality"] and recipe then
     local recycling = require("__quality__/prototypes/recycling")
-    recycling.generate_recycling_recipe(recipe)
+
+    recipe.icon = nil
+    recipe.icon_size = nil
+    recipe.icons = {
+        {
+            icon = "__IndustrialRevolution3Assets1__/graphics/icons/64/graphitic-coke.png",
+            icon_size = 64,
+        }
+    }
+
+    recycling.generate_self_recycling_recipe(recipe)
+
+    recipe       = data.raw["recipe"]["coke-from-crushed-coal"]
+    recipe.icons = {
+        { icon = "__IndustrialRevolution3Assets1__/graphics/icons/64/carbon-crushed.png", shift = { -12, -12 },  scale = 0.4 },
+        { icon = "__IndustrialRevolution3Assets1__/graphics/icons/64/graphitic-coke.png", draw_background = true }
+    }
+
+    if mods["space-age"] then
+        recipe       = data.raw["recipe"]["coke-from-carbon"]
+        recipe.icons = {
+            { icon = "__space-age__/graphics/icons/carbon.png",                               shift = { -12, -12 },  scale = 0.4 },
+            { icon = "__IndustrialRevolution3Assets1__/graphics/icons/64/graphitic-coke.png", draw_background = true }
+        }
+    end
 end
