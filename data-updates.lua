@@ -31,14 +31,16 @@ end
 
 require("prototypes/item/coke")
 
-recipe       = data.raw["recipe"]["coke-from-crushed-coal"]
-recipe.icons = {
-    { icon = "__IndustrialRevolution3Assets1__/graphics/icons/64/carbon-crushed.png", shift = { -12, -12 },  scale = 0.4 },
-    { icon = "__IndustrialRevolution3Assets1__/graphics/icons/64/graphitic-coke.png", draw_background = true }
-}
+recipe = data.raw["recipe"]["coke-from-crushed-coal"]
+if recipe then
+    recipe.icons = {
+        { icon = "__IndustrialRevolution3Assets1__/graphics/icons/64/carbon-crushed.png", shift = { -12, -12 },  scale = 0.4 },
+        { icon = "__IndustrialRevolution3Assets1__/graphics/icons/64/graphitic-coke.png", draw_background = true }
+    }
+end
 
-if mods["space-age"] then
-    recipe       = data.raw["recipe"]["coke-from-carbon"]
+recipe = data.raw["recipe"]["coke-from-carbon"]
+if mods["space-age"] and recipe then
     recipe.icons = {
         { icon = "__space-age__/graphics/icons/carbon.png",                               shift = { -12, -12 },  scale = 0.4 },
         { icon = "__IndustrialRevolution3Assets1__/graphics/icons/64/graphitic-coke.png", draw_background = true }
