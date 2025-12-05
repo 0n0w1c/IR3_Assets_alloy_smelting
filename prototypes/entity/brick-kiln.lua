@@ -1,6 +1,18 @@
-local entity                  = data.raw["assembling-machine"]["brick-kiln"]
+local entity = data.raw["assembling-machine"]["brick-kiln"]
 
-local SCALE                   = 2 / 3
+local SCALE  = 2 / 3
+
+if settings.startup["IR3-brick-kiln-size"].value == "3x3" then
+    SCALE                = 3 / 3
+    entity.collision_box = {
+        { -1.4, -1.4 },
+        { 1.4,  1.4 }
+    }
+    entity.selection_box = {
+        { -1.5, -1.5 },
+        { 1.5,  1.5 }
+    }
+end
 
 entity.icon                   = "__IndustrialRevolution3Assets1__/graphics/icons/64/stone-alloy-furnace.png"
 

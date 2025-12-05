@@ -1,0 +1,10 @@
+data:extend({
+    {
+        type = "string-setting",
+        name = "IR3-brick-kiln-size",
+        setting_type = "startup",
+        allowed_values = { "2x2", "3x3" },
+        default_value = "2x2",
+        order = "a"
+    }
+})
